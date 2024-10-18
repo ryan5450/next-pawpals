@@ -12,7 +12,7 @@ export const createOrUpdateUser = async (
 ) => {
   try {
     await connect();
-    const user = await User.findOneAndUpdate(
+    const newUser = await User.findOneAndUpdate(
       { clerkId: id },
       {
         $set: {
@@ -25,7 +25,7 @@ export const createOrUpdateUser = async (
       },
       { new: true, upsert: true }
     );
-    return user;
+    return newUser;
   } catch (error) {
     console.log('Error creating or updating user:', error);
   }
