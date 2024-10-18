@@ -102,7 +102,7 @@ export async function POST(req) {
     }
   }
 
-  return new Response('', { status: 200 });
+
 }
 
 return NextResponse.json({ message: "New user created", user: newUser }); 
